@@ -2,7 +2,8 @@
 """
 Daily Azure Learning Journey Automation Pipeline
 Usage:
-    python scripts/process_day.py --video "path/to/recording.mp4" --day 2 --title "Azure Storage Accounts"
+    python scripts/process_day.py --day 2 --title "Azure Storage Accounts"
+    (Automatically detects latest recording from C:\Users\Shubham\Videos\Screen Recordings\ if --video is omitted)
 """
 
 import os
@@ -15,6 +16,20 @@ import cv2
 from PIL import Image
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+def find_latest_recording() -> str:
+    search_dirs = [
+        Path(r"C:\Users\Shubham\Videos\Screen Recordings"),
+        REPO_ROOT / "recordings",
+    ]
+    all_videos = []
+    for d in search_dirs:
+        if d.exists():
+            all_videos.extend(d.glob("*.mp4"))
+    if not all_videos:
+        return None
+    latest = max(all_videos, key=lambda p: p.stat().st_mtime)
+    return str(latest)
 
 def slugify(text: str) -> str:
     text = text.lower()
@@ -141,16 +156,25 @@ def crop_active_window(image_path: Path, output_path: Path, box: tuple):
 
 def main():
     parser = argparse.ArgumentParser(description="Azure Daily Lab Automation Pipeline")
-    parser.add_argument("--video", required=True, help="Path to video file")
-    parser.add_argument("--day", type=int, required=True, help="Day number")
-    parser.add_argument("--title", required=True, help="Lab title")
-    parser.add_argument("--interval", type=float, default=4.0, help="Extraction interval in seconds")
+    parser.add_argument("--video", default=None, help="Path to video file (defaults to newest in Screen Recordings)")
+    parser.add_argument("--day", type=int, required=True, help="Day number (e.g., 2)")
+    parser.add_argument("--title", required=True, help="Lab title (e.g., 'Azure Blob Storage Setup')")
+    parser.add_argument("--interval", type=float, default=4.0, help="Extraction interval in seconds (default: 4.0)")
     args = parser.parse_args()
 
+    video_path = args.video
+    if not video_path:
+        print("No --video argument provided. Searching for latest screen recording...")
+        video_path = find_latest_recording()
+        if not video_path:
+            print("Error: No MP4 video files found in C:\\Users\\Shubham\\Videos\\Screen Recordings or recordings/")
+            sys.exit(1)
+        print(f"Auto-detected latest recording: {video_path}")
+
     day_dir, raw_dir, curated_dir = setup_day_directory(args.day, args.title)
-    extract_frames(args.video, raw_dir, args.interval)
+    extract_frames(video_path, raw_dir, args.interval)
     update_navigation(args.day, args.title, day_dir.name)
     print("\nScaffolding and frame extraction complete!")
 
 if __name__ == "__main__":
-    main()
+    main()\n
