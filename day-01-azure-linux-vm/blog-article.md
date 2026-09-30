@@ -22,25 +22,7 @@ In this hands-on guide, we will:
 
 The following diagram illustrates how incoming traffic travels from the public internet through Azure's networking stack to our Nginx web server:
 
-```mermaid
-flowchart LR
- User([ Internet / Browser]) -->|HTTP Port 80| PIP[Azure Public IP\n20.78.151.54]
- Admin([ Local Terminal]) -->|SSH Port 22| PIP
-
- subgraph Azure_Cloud["Microsoft Azure (Japan West)"]
- subgraph RG["Resource Group: azure-study-1"]
- PIP --> NSG["Network Security Group: webvm01-nsg"]
- 
- subgraph VNet["Virtual Network: vnet-japanwest-1"]
- subgraph Subnet["Subnet: snet-japanwest-1"]
- NSG --> NIC["NIC: webvm01454\nPrivate IP: 172.16.0.4"]
- NIC --> VM["Ubuntu 24.04 VM: webvm01\n(Standard_B2ts_v2)"]
- VM --> Nginx["Nginx Web Server\n(Port 80)"]
- end
- end
- end
- end
-```
+![Azure Linux VM Architecture Diagram](./screenshots/curated/00_architecture_diagram.png)
 
 ---
 
