@@ -22,7 +22,7 @@ In this hands-on guide, we will:
 
 The following diagram illustrates how incoming traffic travels from the public internet through Azure's networking stack to our Nginx web server:
 
-![Azure Linux VM Architecture Diagram](./screenshots/curated/00_architecture_diagram.png)
+![Azure Linux VM Architecture Diagram](./screenshots/curated/00_azure_vm_architecture.png)
 
 ---
 
