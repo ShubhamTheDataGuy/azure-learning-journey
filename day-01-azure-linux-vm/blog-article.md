@@ -258,7 +258,7 @@ Further configuration is required.
 
 ![Welcome to Nginx Success Page](./screenshots/curated/15_nginx_welcome_page_success.png)
 
- **Success!** Your cloud web server is now officially reachable worldwide.
+**Success!** Your cloud web server is now officially reachable worldwide.
 
 ---
 

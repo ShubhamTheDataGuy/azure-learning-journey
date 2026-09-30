@@ -1,4 +1,4 @@
-# Azure Learning Journey 
+# Azure Learning Journey
 
 Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
 
