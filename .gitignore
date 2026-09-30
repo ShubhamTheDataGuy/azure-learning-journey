@@ -1,0 +1,14 @@
+﻿# Virtual Environment
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Raw video extraction dumps (keep repo lightweight; curated screenshots are tracked)
+**/screenshots/raw/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+*.log
