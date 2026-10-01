@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+r"""
 Daily Azure Learning Journey Automation Pipeline
 Usage:
     python scripts/process_day.py --day 2 --title "Azure Storage Accounts"
@@ -177,4 +177,4 @@ def main():
     print("\nScaffolding and frame extraction complete!")
 
 if __name__ == "__main__":
-    main()\n
+    main()
