@@ -108,15 +108,20 @@ def extract_frames(video_path: str, raw_dir: Path, interval_sec: float = 4.0):
 def update_navigation(day_num: int, title: str, day_dir_name: str):
     sidebar_path = REPO_ROOT / "_sidebar.md"
     readme_path = REPO_ROOT / "README.md"
-    link_line = f"  * [Day {day_num}: {title}]({day_dir_name}/blog-article.md)"
+    link_line = f"  * [Day {day_num}: {title}](/{day_dir_name}/blog-article.md)"
 
     # Update _sidebar.md
     if sidebar_path.exists():
         content = sidebar_path.read_text(encoding="utf-8")
-        if f"{day_dir_name}/blog-article.md" not in content:
+        if f"/{day_dir_name}/blog-article.md" not in content and f"{day_dir_name}/blog-article.md" not in content:
             content = content.rstrip() + f"\n{link_line}\n"
             sidebar_path.write_text(content, encoding="utf-8")
             print(f"Updated {sidebar_path}")
+
+        # Synchronize _sidebar.md to all day directories for fallback resilience
+        for d in REPO_ROOT.glob("day-*"):
+            if d.is_dir():
+                (d / "_sidebar.md").write_text(sidebar_path.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Update README.md
     readme_line = f"- **[Day {day_num}: {title}](./{day_dir_name}/blog-article.md)**\n"

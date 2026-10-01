@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <title>Azure Learning Journey</title>
- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
- <meta name="description" content="Step-by-step practical documentation of my Microsoft Azure learning journey.">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
- <style>
- :root {
- --theme-color: #0078d4;
- }
- .app-name-link img {
- width: 32px;
- }
- .markdown-section img {
- border-radius: 8px;
- box-shadow: 0 4px 14px rgba(0,0,0,0.15);
- margin: 1.5rem 0;
- }
- </style>
+  <meta charset="UTF-8">
+  <title>Azure Learning Journey</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="description" content="Step-by-step practical documentation of my Microsoft Azure learning journey.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #0078d4;
+    }
+    .app-name-link img {
+      width: 32px;
+    }
+    .markdown-section img {
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      margin: 1.5rem 0;
+    }
+  </style>
 </head>
 <body>
- <div id="app">Loading documentation...</div>
- <script>
- window.$docsify = {
- name: 'Azure Journey',
- repo: '',
- loadSidebar: true,
- subMaxLevel: 3,
- auto2top: true,
- search: {
- placeholder: 'Search documentation...',
- noData: 'No results found',
- },
- copyCode: {
- buttonText: 'Copy',
- successText: 'Copied'
- }
- }
- </script>
- <!-- Docsify v4 -->
- <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
- <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
- <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
- <!-- Mermaid Diagram Support -->
- <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
- <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
- <script>
-   mermaid.initialize({ startOnLoad: true });
- </script>
+  <div id="app">Loading documentation...</div>
+  <script>
+    window.$docsify = {
+      name: 'Azure Journey',
+      repo: '',
+      loadSidebar: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      subMaxLevel: 3,
+      auto2top: true,
+      search: {
+        placeholder: 'Search documentation...',
+        noData: 'No results found',
+      },
+      copyCode: {
+        buttonText: 'Copy',
+        successText: 'Copied'
+      }
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <!-- Mermaid Diagram Support -->
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
 </body>
 </html>
