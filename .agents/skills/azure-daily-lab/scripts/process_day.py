@@ -11,6 +11,7 @@ import sys
 import re
 import argparse
 import json
+import shutil
 from pathlib import Path
 import cv2
 from PIL import Image
@@ -160,6 +161,31 @@ def crop_active_window(image_path: Path, output_path: Path, box: tuple):
     cropped.save(output_path)
     print(f"Cropped {image_path.name} -> {output_path.name} ({cropped.size})")
 
+def archive_and_clean_recording(video_path: str, day_num: int, title: str) -> Path:
+    slug = slugify(title)
+    recordings_dir = REPO_ROOT / "recordings"
+    recordings_dir.mkdir(parents=True, exist_ok=True)
+    target_filename = f"day-{day_num:02d}-{slug}.mp4"
+    target_path = recordings_dir / target_filename
+
+    src = Path(video_path).resolve()
+    dst = target_path.resolve()
+
+    if src != dst:
+        src_size = src.stat().st_size
+        print(f"Archiving recording: {src.name} -> {target_path.name} ({src_size} bytes)")
+        shutil.copy2(str(src), str(dst))
+        if dst.exists() and dst.stat().st_size == src_size:
+            try:
+                src.unlink()
+                print(f"Successfully deleted original recording from source: {src}")
+            except Exception as e:
+                print(f"Notice: Could not delete source recording: {e}")
+        else:
+            print(f"Error: Archive verification failed for {dst}")
+            return src
+    return dst
+
 def main():
     parser = argparse.ArgumentParser(description="Azure Daily Lab Automation Pipeline")
     parser.add_argument("--video", default=None, help="Path to video file (defaults to newest in Screen Recordings)")
@@ -179,8 +205,9 @@ def main():
 
     day_dir, raw_dir, curated_dir = setup_day_directory(args.day, args.title)
     extract_frames(video_path, raw_dir, args.interval)
+    archive_and_clean_recording(video_path, args.day, args.title)
     update_navigation(args.day, args.title, day_dir.name)
-    print("\nScaffolding and frame extraction complete!")
+    print("\nScaffolding, frame extraction, and video archive complete!")
 
 if __name__ == "__main__":
     main()

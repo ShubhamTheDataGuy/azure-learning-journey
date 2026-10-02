@@ -1,0 +1,3 @@
+# Video recordings directory
+This directory stores local screen recordings for each lab day.
+Video files (*.mp4) are stored locally here and excluded from Git commits.

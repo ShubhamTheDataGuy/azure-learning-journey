@@ -20,7 +20,8 @@ Execute all steps end-to-end without pausing for unnecessary confirmations.
 flowchart TD
     Video[User Video Recording] --> Script[Run process_day.py]
     Script --> Extract[Frame Extraction & Directory Scaffold]
-    Extract --> Curate[Select & Crop Active Windows]
+    Extract --> Archive[Archive & Rename Video to recordings/ & Clean Source]
+    Archive --> Curate[Select & Crop Active Windows]
     Curate --> Article[Draft blog-article.md with Mermaid Diagram]
     Article --> Validate[Validate Zero Emojis & Links]
     Validate --> Nav[Sync _sidebar.md & README.md]
@@ -40,7 +41,10 @@ This automatically:
 - Creates `day-XX-<slug>/screenshots/raw` and `day-XX-<slug>/screenshots/curated`
 - Extracts high-resolution frames every 4 seconds into `raw/`
 - Generates `raw/manifest.json` with frame timestamps
+- Archives and renames the video into `recordings/day-XX-<slug>.mp4` (excluded from git via `.gitignore`)
+- Deletes the original source recording from `C:\Users\Shubham\Videos\Screen Recordings\`
 - Appends the lab entry to `_sidebar.md` and `README.md`
+- Synchronizes `_sidebar.md` across all `day-*` directories
 
 ---
 
