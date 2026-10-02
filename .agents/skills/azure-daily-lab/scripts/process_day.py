@@ -118,10 +118,11 @@ def update_navigation(day_num: int, title: str, day_dir_name: str):
             sidebar_path.write_text(content, encoding="utf-8")
             print(f"Updated {sidebar_path}")
 
-        # Synchronize _sidebar.md to all day directories for fallback resilience
+        # Always synchronize _sidebar.md to all day directories for fallback resilience
+        fresh_sidebar = sidebar_path.read_text(encoding="utf-8")
         for d in REPO_ROOT.glob("day-*"):
             if d.is_dir():
-                (d / "_sidebar.md").write_text(sidebar_path.read_text(encoding="utf-8"), encoding="utf-8")
+                (d / "_sidebar.md").write_text(fresh_sidebar, encoding="utf-8")
 
     # Update README.md
     readme_line = f"- **[Day {day_num}: {title}](./{day_dir_name}/blog-article.md)**\n"

@@ -114,6 +114,17 @@ Draft `day-XX-<slug>/blog-article.md` adhering strictly to this layout:
   `> [!IMPORTANT]`
   `> [!WARNING]`
 
+### Mandatory Navigation & Cache Prevention Checklist
+1. **Root `_sidebar.md` Format:**
+   - Every lab entry must use an absolute root path: `  * [Day X: Title](/day-XX-<slug>/blog-article.md)`.
+   - Never use relative links without a leading slash (`/`).
+2. **Directory Fallback Sync:**
+   - Always verify `_sidebar.md` is replicated into every `day-*` folder (`day-XX-*/_sidebar.md`).
+3. **Docsify Network Cache-Buster in `index.html`:**
+   - `index.html` must maintain the network interceptor (`XMLHttpRequest.prototype.open` and `window.fetch`) that appends `?_cb=` + timestamp to all `_sidebar.md` and `README.md` requests.
+   - `window.$docsify` must include `requestHeaders: { 'cache-control': 'no-cache', 'pragma': 'no-cache' }`.
+   - This prevents GitHub Pages 10-minute CDN caching (`max-age=600`) and browser disk caching from hiding new sidebar links.
+
 Run validation before committing:
 ```python
 from scripts.process_day import validate_no_emojis
