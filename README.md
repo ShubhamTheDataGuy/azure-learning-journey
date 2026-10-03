@@ -3,6 +3,14 @@
 Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
 
 ## Articles & Labs
+- **[Day 4: Azure Custom Script Extensions – Windows (IIS) & Linux (NGINX)](./day-04-azure-custom-script-extension/blog-article.md)**
+  - Azure Storage Account provisioning (`storageshubham01`) with private blob container (`scripts`)
+  - Authoring cross-platform automation scripts: PowerShell for IIS (`setup-iis.ps1`) and Bash for NGINX (`setup-nginx.sh`)
+  - Windows Server 2025 (`webvm01`) deployment with Custom Script Extension in the VM Advanced wizard
+  - Ubuntu Linux 24.04 (`webvm02`) deployment with Custom Script for Linux extension and explicit shell command invocation
+  - Network Security Group (NSG) configuration for inbound HTTP (Port 80) traffic
+  - Resolving IIS default document precedence vs custom `default.html`
+  - Zero-touch public endpoint verification for both IIS and NGINX servers without RDP or SSH access
 - **[Day 3: Azure VM Encryption – SSE with CMK & BitLocker ADE](./day-03-azure-vm-encryption/blog-article.md)**
   - Azure Key Vault deployment with Azure RBAC permission model
   - Resolving Key Vault data plane authorization errors (`Key Vault Administrator` role assignment)
