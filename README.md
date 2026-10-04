@@ -3,6 +3,17 @@
 Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
 
 ## Articles & Labs
+- **[Day 5: Azure High Availability – Availability Sets vs Availability Zones](./day-05-azure-availability-zones-and-sets/blog-article.md)**
+  - Physical infrastructure failure modes and the Azure resiliency hierarchy
+  - SLA mathematics: 99.9% vs 99.95% vs 99.99% availability tiers
+  - Availability Sets deep dive: Fault Domains (racks/PDU/switch isolation) and Update Domains (host maintenance isolation)
+  - Managed Disks storage cluster alignment with compute fault domains
+  - Availability Zones deep dive: physically separated datacenters, independent power/cooling, and sub-2ms fiber mesh
+  - Zonal vs Zone-Redundant vs Regional resource classification
+  - Subscription logical-to-physical zone mapping mechanics
+  - Standard Load Balancer integration with zone-redundant frontends and health probes
+  - Production Azure CLI automation scripts and Bicep infrastructure-as-code blueprints
+  - Comprehensive 12-dimension comparison matrix and 1-year quick revision cheat sheet
 - **[Day 4: Azure Custom Script Extensions – Windows (IIS) & Linux (NGINX)](./day-04-azure-custom-script-extension/blog-article.md)**
   - Azure Storage Account provisioning (`storageshubham01`) with private blob container (`scripts`)
   - Authoring cross-platform automation scripts: PowerShell for IIS (`setup-iis.ps1`) and Bash for NGINX (`setup-nginx.sh`)
