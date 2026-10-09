@@ -3,6 +3,17 @@
 Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
 
 ## Articles & Labs
+- **[Day 6: Azure VM Scale Sets and Autoscaling](./day-06-azure-vm-scale-sets-and-autoscaling/blog-article.md)**
+  - Uniform Virtual Machine Scale Set (`SET0000`) deployment with Ubuntu Server 24.04 LTS
+  - Uniform vs Flexible orchestration mode architectural comparison and selection criteria
+  - Virtual network and subnet configuration with instance-level public IPs for diagnostic access
+  - Baseline single-instance deployment (`SET0000_0`) and SSH verification
+  - Azure Monitor Custom Autoscale profile and metric rule configuration (CPU > 70% over 5m lookback)
+  - Diagnosing and resolving `MissingSubscriptionRegistration: microsoft.insights` resource provider error
+  - Generating multi-threaded synthetic CPU workload using `stress` (`sudo stress --cpu 100`)
+  - Automated horizontal scale-out validation with dynamic provisioning of `SET0000_1`
+  - Autoscale mechanics: metric sampling, cooldown timers, flapping prevention, and scale-in pairing
+  - Production Azure CLI automation and application bootstrapping with Custom Script Extensions
 - **[Day 5: Azure High Availability – Availability Sets vs Availability Zones](./day-05-azure-availability-zones-and-sets/blog-article.md)**
   - Physical infrastructure failure modes and the Azure resiliency hierarchy
   - SLA mathematics: 99.9% vs 99.95% vs 99.99% availability tiers
