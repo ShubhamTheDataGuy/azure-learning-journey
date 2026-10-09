@@ -7,3 +7,4 @@
   * [Day 4: Azure Custom Script Extensions - Windows & Linux](/day-04-azure-custom-script-extension/blog-article.md)
   * [Day 5: Azure Availability Zones & Availability Sets](/day-05-azure-availability-zones-and-sets/blog-article.md)
   * [Day 6: Azure VM Scale Sets and Autoscaling](/day-06-azure-vm-scale-sets-and-autoscaling/blog-article.md)
+  * [Day 7: Azure Flexible VM Scale Sets](/day-07-azure-flexible-vm-scale-sets/blog-article.md)

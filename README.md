@@ -3,6 +3,17 @@
 Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
 
 ## Articles & Labs
+- **[Day 7: Azure Flexible VM Scale Sets](./day-07-azure-flexible-vm-scale-sets/blog-article.md)**
+  - Flexible Virtual Machine Scale Set (`set0001`) deployment in Central India (Zone 1)
+  - Architectural evolution: Flexible vs Uniform orchestration mode comparison matrix
+  - Multi-SKU profile configuration mixing 3 burstable sizes (`Standard_B2ts_v2`, `Standard_B2ats_v2`, `Standard_B2als_v2`)
+  - Automated cost optimization using the `Lowest price` allocation strategy
+  - First-class citizen resource representation: standalone VM (`set0001_3c0c7e6d`), dedicated disk, NIC, and public IP
+  - Authoritative methodologies for adding virtual machines to an existing Flexible VMSS
+  - Provisioning and attaching standalone VMs via Azure Portal with explicit Platform Fault Domain mapping
+  - Enterprise automation using Azure CLI (`az vm create --vmss set0001`) and PowerShell (`New-AzVMConfig`)
+  - Platform Fault Domain spreading mechanics (FD 0 to 4) providing rack-level resilience without Availability Sets
+  - Real-world gotchas: network placement constraints, orchestration mode immutability, and Spot eviction policies
 - **[Day 6: Azure VM Scale Sets and Autoscaling](./day-06-azure-vm-scale-sets-and-autoscaling/blog-article.md)**
   - Uniform Virtual Machine Scale Set (`SET0000`) deployment with Ubuntu Server 24.04 LTS
   - Uniform vs Flexible orchestration mode architectural comparison and selection criteria
