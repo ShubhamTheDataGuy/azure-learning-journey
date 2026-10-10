@@ -129,6 +129,16 @@ Draft `day-XX-<slug>/blog-article.md` adhering strictly to this layout:
    - `window.$docsify` must include `requestHeaders: { 'cache-control': 'no-cache', 'pragma': 'no-cache' }`.
    - This prevents GitHub Pages 10-minute CDN caching (`max-age=600`) and browser disk caching from hiding new sidebar links.
 
+### Embedded HTML / Interactive Widgets in Articles (Docsify Rules)
+Docsify uses marked.js, which turns a blank line followed by 4+ spaces of indentation into a code block. This previously caused raw HTML (buttons, divs) to render as a grey `markup` code box on Day 8.
+1. **No blank lines** anywhere inside a raw HTML block (from the opening `<div>` to its closing `</div>`).
+2. **No indentation** (0 spaces) on HTML lines inside markdown. Never indent nested tags by 4 spaces.
+3. **No HTML comments** inside the block; keep it compact.
+4. **Scripts:** `index.html` must keep `executeScript: true` in `window.$docsify`, otherwise inline `<script>` tags in articles are ignored.
+5. **SPA navigation:** Docsify does not refire `DOMContentLoaded` on route changes. Expose widget functions on `window` (e.g. `window.renderQuiz = renderQuiz;`), call them directly at the end of the script, and rely on the `hook.doneEach` plugin in `index.html` that re-invokes `window.renderQuiz()` after each page render. Make render functions idempotent (skip if already rendered).
+6. **Inline handlers** (`onclick`, `onchange`) must call `window.<fn>()`.
+7. **Verify after pushing:** check the live page for any grey code box containing HTML before reporting completion.
+
 Run validation before committing:
 ```python
 from scripts.process_day import validate_no_emojis
