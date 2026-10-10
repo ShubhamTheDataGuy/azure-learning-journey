@@ -3,6 +3,13 @@
 Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
 
 ## Articles & Labs
+- **[Day 8: AZ-104 Exam Preparation Quiz (Days 1–7)](./day-08-az-104-exam-prep-quiz/blog-article.md)**
+  - Comprehensive 24-question scenario-based certification practice exam covering Week 1 milestones
+  - Objective alignment with official AZ-104 domains: Identity, Storage, Compute, Networking, and Monitoring
+  - Interactive browser-based JavaScript exam simulator with immediate grading against 700/1000 passing score
+  - In-depth architectural analysis and distractor breakdown for every single question
+  - Real-world AZ-104 exam traps and distractor warnings for compute, storage, and networking
+  - High-yield 1-year quick revision cheat sheet summarizing critical cloud concepts from Days 1 to 7
 - **[Day 7: Azure Flexible VM Scale Sets](./day-07-azure-flexible-vm-scale-sets/blog-article.md)**
   - Flexible Virtual Machine Scale Set (`set0001`) deployment in Central India (Zone 1)
   - Architectural evolution: Flexible vs Uniform orchestration mode comparison matrix
