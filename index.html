@@ -53,6 +53,7 @@
       name: 'Azure Journey',
       repo: '',
       loadSidebar: true,
+      executeScript: true,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
@@ -69,7 +70,16 @@
       copyCode: {
         buttonText: 'Copy',
         successText: 'Copied'
-      }
+      },
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            if (typeof window.renderQuiz === 'function') {
+              window.renderQuiz();
+            }
+          });
+        }
+      ]
     }
   </script>
   <!-- Docsify v4 -->

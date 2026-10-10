@@ -27,31 +27,27 @@ This milestone guide is designed from the perspective of the **AZ-104: Microsoft
 Test your knowledge in real time before reviewing the detailed architectural explanations below. Select your answers and click **Submit Exam & Calculate Score** to evaluate your performance against the official passing threshold of **700 / 1000**.
 
 <div id="quiz-container" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 24px; margin-bottom: 32px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px;">
-    <div>
-      <h3 style="margin: 0; color: #0f172a;">AZ-104 Interactive Exam Simulator</h3>
-      <p style="margin: 4px 0 0 0; color: #64748b; font-size: 14px;">Total Questions: 24 | Passing Score: 700 / 1000 (70%)</p>
-    </div>
-    <div id="quiz-badge" style="background: #0284c7; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 13px;">
-      Status: In Progress
-    </div>
-  </div>
-
-  <form id="az104-quiz-form">
-    <!-- Questions Container populated dynamically -->
-    <div id="quiz-questions-render"></div>
-
-    <div style="margin-top: 28px; display: flex; gap: 12px; align-items: center;">
-      <button type="button" id="btn-submit-quiz" onclick="gradeQuiz()" style="background: #0284c7; color: #ffffff; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
-        Submit Exam & Calculate Score
-      </button>
-      <button type="button" id="btn-reset-quiz" onclick="resetQuiz()" style="background: #e2e8f0; color: #334155; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
-        Reset Exam
-      </button>
-    </div>
-  </form>
-
-  <div id="quiz-result-card" style="display: none; margin-top: 24px; padding: 20px; border-radius: 6px; border: 1px solid #cbd5e1;"></div>
+<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 20px;">
+<div>
+<h3 style="margin: 0; color: #0f172a;">AZ-104 Interactive Exam Simulator</h3>
+<p style="margin: 4px 0 0 0; color: #64748b; font-size: 14px;">Total Questions: 24 | Passing Score: 700 / 1000 (70%)</p>
+</div>
+<div id="quiz-badge" style="background: #0284c7; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 13px;">
+Status: In Progress
+</div>
+</div>
+<form id="az104-quiz-form">
+<div id="quiz-questions-render"></div>
+<div style="margin-top: 28px; display: flex; gap: 12px; align-items: center;">
+<button type="button" id="btn-submit-quiz" onclick="window.gradeQuiz()" style="background: #0284c7; color: #ffffff; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
+Submit Exam & Calculate Score
+</button>
+<button type="button" id="btn-reset-quiz" onclick="window.resetQuiz()" style="background: #e2e8f0; color: #334155; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px;">
+Reset Exam
+</button>
+</div>
+</form>
+<div id="quiz-result-card" style="display: none; margin-top: 24px; padding: 20px; border-radius: 6px; border: 1px solid #cbd5e1;"></div>
 </div>
 
 <script>
@@ -373,6 +369,7 @@ const quizQuestions = [
 function renderQuiz() {
   const container = document.getElementById("quiz-questions-render");
   if (!container) return;
+  if (container.children.length > 0) return;
   let html = "";
   quizQuestions.forEach((q, idx) => {
     html += `
@@ -387,7 +384,7 @@ function renderQuiz() {
     q.options.forEach((opt, optIdx) => {
       html += `
         <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; padding: 8px 12px; border-radius: 4px; border: 1px solid #e2e8f0; background: #f8fafc; font-size: 14px; color: #334155;">
-          <input type="radio" name="q_${q.id}" value="${optIdx}" onchange="markAnswered(${q.id})" style="margin-top: 3px;">
+          <input type="radio" name="q_${q.id}" value="${optIdx}" onchange="window.markAnswered(${q.id})" style="margin-top: 3px;">
           <span>${opt}</span>
         </label>
       `;
@@ -515,10 +512,13 @@ function resetQuiz() {
   });
 }
 
-// Initial Render
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", renderQuiz);
-} else {
+window.quizQuestions = quizQuestions;
+window.renderQuiz = renderQuiz;
+window.markAnswered = markAnswered;
+window.gradeQuiz = gradeQuiz;
+window.resetQuiz = resetQuiz;
+
+if (document.getElementById("quiz-questions-render")) {
   renderQuiz();
 }
 </script>
