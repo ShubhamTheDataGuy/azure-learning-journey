@@ -1,6 +1,16 @@
 # Azure Learning Journey
 
 ## Articles & Labs
+- **[Day 11: Azure Blob Storage Shared Access Signatures and Security](./day-11-azure-blob-storage-shared-access-signatures-and-security/blog-article.md)**
+  - Principle of Least Privilege (PoLP) delegated authentication without root account keys
+  - Generating resource-scoped Service SAS tokens for individual blobs and container namespaces
+  - Dissecting cryptographic URI query string parameters (`sp`, `st`, `se`, `spr`, `sv`, `sr`, `sig`)
+  - Diagnosing desktop client attachment failure: missing container List permissions (`sp=l`)
+  - Demonstrating cryptographic authorization enforcement when attempting deletion on a Read/List SAS
+  - Provisioning an Account SAS (`ss=b`, `srt=sco`, `sp=rdl`) with explicit Delete authorization
+  - Completing lifecycle blob deletion in Storage Explorer and observing activity logs
+  - Architectural comparison: User Delegation SAS vs Service SAS vs Account SAS
+  - Production Azure CLI automation and enterprise Stored Access Policy (SAP) governance
 - **[Day 10: Azure Storage Explorer and Access Keys](./day-10-azure-storage-explorer-and-access-keys/blog-article.md)**
   - Standalone multi-platform client connection using 512-bit Storage Account Access Keys (`key1`)
   - Symmetric key authentication mechanics and HMAC-SHA256 request signing

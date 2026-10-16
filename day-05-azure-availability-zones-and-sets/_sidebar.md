@@ -11,3 +11,4 @@
   * [Day 8: AZ-104 Exam Preparation Quiz (Days 1-7)](/day-08-az-104-exam-prep-quiz/blog-article.md)
   * [Day 9: Azure Storage Accounts and Blob Containers](/day-09-azure-storage-accounts-and-blob-containers/blog-article.md)
   * [Day 10: Azure Storage Explorer and Access Keys](/day-10-azure-storage-explorer-and-access-keys/blog-article.md)
+  * [Day 11: Azure Blob Storage Shared Access Signatures and Security](/day-11-azure-blob-storage-shared-access-signatures-and-security/blog-article.md)
