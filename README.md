@@ -1,7 +1,14 @@
 # Azure Learning Journey
 
-Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
-
+## Articles & Labs
+- **[Day 10: Azure Storage Explorer and Access Keys](./day-10-azure-storage-explorer-and-access-keys/blog-article.md)**
+  - Standalone multi-platform client connection using 512-bit Storage Account Access Keys (`key1`)
+  - Symmetric key authentication mechanics and HMAC-SHA256 request signing
+  - Navigating storage hierarchies: Blob Containers, File Shares, Queues, and Tables
+  - Remote inspection of container paths (`data/images/`) and block blob properties
+  - High-throughput parallel blob downloading to local caching storage powered by AzCopy
+  - Architectural blast radius analysis: risks of perpetual root-level access keys vs Azure Entra ID RBAC
+  - Industry-standard zero-downtime dual-key rotation pattern (`key1` and `key2`) with Azure CLI automation
 - **[Day 9: Azure Storage Accounts and Blob Containers](./day-09-azure-storage-accounts-and-blob-containers/blog-article.md)**
   - Enterprise General-Purpose v2 (GPv2) storage account (`azurestudystorage01`) deployment with Geo-redundant storage (GRS)
   - Blob service architecture, container provisioning (`data`), and logical virtual directory structuring (`images/`, `documents/`)
