@@ -2,7 +2,15 @@
 
 Daily hands-on tutorials and blogs documenting practical cloud engineering with Microsoft Azure.
 
-## Articles & Labs
+- **[Day 9: Azure Storage Accounts and Blob Containers](./day-09-azure-storage-accounts-and-blob-containers/blog-article.md)**
+  - Enterprise General-Purpose v2 (GPv2) storage account (`azurestudystorage01`) deployment with Geo-redundant storage (GRS)
+  - Blob service architecture, container provisioning (`data`), and logical virtual directory structuring (`images/`, `documents/`)
+  - Multi-format block blob uploads (WEBP media and PDF technical assets) with Hot access tiering
+  - Diagnosing the real-world `PublicAccessNotPermitted` XML error when attempting direct public browser access
+  - Demystifying Azure's two-tier security enforcement: Account-level `Allow Blob anonymous access` vs Container-level access policies
+  - Enabling anonymous access at the configuration layer and promoting container permissions to `Blob (anonymous read)`
+  - Verification of unauthenticated public media delivery via direct HTTPS endpoints
+  - Production Azure CLI automation snippets and cost-effective teardown procedures
 - **[Day 8: AZ-104 Exam Preparation Quiz (Days 1–7)](./day-08-az-104-exam-prep-quiz/blog-article.md)**
   - Comprehensive 24-question scenario-based certification practice exam covering Week 1 milestones
   - Objective alignment with official AZ-104 domains: Identity, Storage, Compute, Networking, and Monitoring

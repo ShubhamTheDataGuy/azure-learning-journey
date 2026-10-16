@@ -9,3 +9,4 @@
   * [Day 6: Azure VM Scale Sets and Autoscaling](/day-06-azure-vm-scale-sets-and-autoscaling/blog-article.md)
   * [Day 7: Azure Flexible VM Scale Sets](/day-07-azure-flexible-vm-scale-sets/blog-article.md)
   * [Day 8: AZ-104 Exam Preparation Quiz (Days 1-7)](/day-08-az-104-exam-prep-quiz/blog-article.md)
+  * [Day 9: Azure Storage Accounts and Blob Containers](/day-09-azure-storage-accounts-and-blob-containers/blog-article.md)
