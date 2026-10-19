@@ -1,6 +1,19 @@
 # Azure Learning Journey
 
 ## Articles & Labs
+- **[Day 13: Azure Storage Redundancy Options: LRS, ZRS, GRS, RA-GRS, GZRS, and RA-GZRS Master Guide](./day-13-azure-storage-redundancy-options/blog-article.md)**
+  - Comprehensive architectural analysis of Azure Storage data durability vs availability guarantees
+  - Primary region replication mechanics: Locally Redundant Storage (LRS) vs Zone-Redundant Storage (ZRS)
+  - Cross-region geo-replication: Geo-Redundant Storage (GRS) and Read-Access Geo-Redundant Storage (RA-GRS)
+  - Maximum enterprise resiliency: Geo-Zone-Redundant Storage (GZRS) and Read-Access Geo-Zone-Redundant Storage (RA-GZRS)
+  - The mathematics and statistical reality of 11, 12, and 16 nines of annual durability
+  - Replication protocols: Synchronous intra-region commits vs Asynchronous inter-region replication loops
+  - Recovery Point Objective (RPO) and Recovery Time Objective (RTO) evaluation via `LastSyncTime`
+  - Deep dive into failover mechanics: Customer-managed unplanned failover vs Zero-data-loss planned failover
+  - Post-failover operational behaviors: Automatic downgrade to LRS and manual geo-redundancy re-establishment
+  - Storage SKU service support matrix (GPv2, Premium Block Blobs, Premium File Shares, Page Blobs)
+  - High-yield AZ-104 certification traps, distractor alerts, and scenario-based decision frameworks
+  - Production Azure CLI automation snippets for monitoring replication lag, converting SKUs, and triggering failovers
 - **[Day 12: Azure Storage Access Policy Mechanisms: Stored Access Policies, SAS Revocation, and Immutability Governance](./day-12-azure-storage-access-policy-mechanisms/blog-article.md)**
   - Decoupling Shared Access Signature constraints from client URLs via container Stored Access Policies (SAP)
   - Provisioning container-level policies with granular CRUDL permissions (`rl` - Read and List)
