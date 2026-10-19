@@ -1,6 +1,15 @@
 # Azure Learning Journey
 
 ## Articles & Labs
+- **[Day 12: Azure Storage Access Policy Mechanisms: Stored Access Policies, SAS Revocation, and Immutability Governance](./day-12-azure-storage-access-policy-mechanisms/blog-article.md)**
+  - Decoupling Shared Access Signature constraints from client URLs via container Stored Access Policies (SAP)
+  - Provisioning container-level policies with granular CRUDL permissions (`rl` - Read and List)
+  - Abstracting permissions away from client-visible URIs using the Signed Identifier (`si`) query parameter
+  - Attaching policy-scoped containers in Microsoft Azure Storage Explorer
+  - Demonstrating cryptographic authorization failure (`403 AuthorizationPermissionMismatch`) upon unprivileged delete attempts
+  - Achieving instant, non-destructive token revocation and permission adjustments without storage account key rotation
+  - Architectural evaluation of Immutable Blob Storage: Time-Based Retention Policies (WORM) vs Legal Holds
+  - Production automation reference using Azure CLI for access policy and immutability management
 - **[Day 11: Azure Blob Storage Shared Access Signatures and Security](./day-11-azure-blob-storage-shared-access-signatures-and-security/blog-article.md)**
   - Principle of Least Privilege (PoLP) delegated authentication without root account keys
   - Generating resource-scoped Service SAS tokens for individual blobs and container namespaces
