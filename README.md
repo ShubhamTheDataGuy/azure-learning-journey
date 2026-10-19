@@ -1,6 +1,20 @@
 # Azure Learning Journey
 
 ## Articles & Labs
+- **[Day 14: Azure Storage Access Tiers and Lifecycle Management: Automated Tiering, Cost Optimization, and Rehydration Master Guide](./day-14-azure-storage-access-tiers-and-lifecycle-management/blog-article.md)**
+  - In-depth architectural analysis of the four Blob access tiers: Hot, Cool, Cold (online), and Archive (offline)
+  - Account-level default tiers vs blob-level explicit and inferred access tier mechanics
+  - Storage cost trade-offs, access vs capacity fees, and early deletion minimum durations (30d Cool, 90d Cold, 180d Archive)
+  - Cold tier requirements (REST API version 2021-12-02+) and operational profile
+  - Archive Rehydration deep dive: Standard Priority (up to 15 hours) vs High Priority (< 1 hour)
+  - Rehydration workflows: in-place status mutation (`SetBlobTier`) vs copy-based rehydration (`CopyBlob`)
+  - End-to-end hands-on walkthrough in Azure Portal: creating multi-action lifecycle rules (`MOVE_TO_COOL_TIER`)
+  - Multi-subtype policy orchestration targeting Base blobs, Snapshots, and Versions simultaneously
+  - Rehydration loop prevention using rehydration protection buffers (`daysAfterLastTierChangeGreaterThan`)
+  - Declarative ARM JSON policy schema dissection (`rules`, `definition`, `actions`, `filters`)
+  - Policy execution internals: 24-48 hour scan interval, daily batch processing, and rule precedence
+  - Production Azure CLI automation commands for instant tier transitions and ARM JSON lifecycle policy deployments
+  - High-yield AZ-104 certification traps, distractor alerts, and scenario-based decision frameworks
 - **[Day 13: Azure Storage Redundancy Options: LRS, ZRS, GRS, RA-GRS, GZRS, and RA-GZRS Master Guide](./day-13-azure-storage-redundancy-options/blog-article.md)**
   - Comprehensive architectural analysis of Azure Storage data durability vs availability guarantees
   - Primary region replication mechanics: Locally Redundant Storage (LRS) vs Zone-Redundant Storage (ZRS)

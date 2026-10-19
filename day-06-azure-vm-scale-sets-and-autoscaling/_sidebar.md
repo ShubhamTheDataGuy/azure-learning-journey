@@ -14,3 +14,4 @@
   * [Day 11: Azure Blob Storage Shared Access Signatures and Security](/day-11-azure-blob-storage-shared-access-signatures-and-security/blog-article.md)
   * [Day 12: Azure Storage Access Policy Mechanisms](/day-12-azure-storage-access-policy-mechanisms/blog-article.md)
   * [Day 13: Azure Storage Redundancy Options](/day-13-azure-storage-redundancy-options/blog-article.md)
+  * [Day 14: Azure Storage Access Tiers & Lifecycle Management](/day-14-azure-storage-access-tiers-and-lifecycle-management/blog-article.md)
