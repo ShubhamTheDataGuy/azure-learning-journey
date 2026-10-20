@@ -15,3 +15,5 @@
   * [Day 12: Azure Storage Access Policy Mechanisms](/day-12-azure-storage-access-policy-mechanisms/blog-article.md)
   * [Day 13: Azure Storage Redundancy Options](/day-13-azure-storage-redundancy-options/blog-article.md)
   * [Day 14: Azure Storage Access Tiers & Lifecycle Management](/day-14-azure-storage-access-tiers-and-lifecycle-management/blog-article.md)
+  * [Day 15: Azure File Shares & AzCopy](/day-15-azure-file-shares-and-azcopy/blog-article.md)
+  * [Day 16: AZ-104 Exam Preparation Quiz (Storage)](/day-16-az-104-storage-exam-prep-quiz/blog-article.md)

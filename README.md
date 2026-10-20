@@ -1,6 +1,23 @@
 # Azure Learning Journey
 
 ## Articles & Labs
+- **[Day 16: AZ-104 Exam Preparation Quiz & Milestone Master Review: Implementing and Managing Storage (Days 9–15)](./day-16-az-104-storage-exam-prep-quiz/blog-article.md)**
+  - Comprehensive 24-question scenario-based certification practice exam covering Azure Storage milestones
+  - Objective alignment with AZ-104 Storage domain (Storage Accounts, Security, Redundancy, Lifecycle, Files, and Migration)
+  - Interactive browser-based JavaScript exam simulator with immediate grading against 700/1000 passing score
+  - In-depth architectural analysis and distractor breakdown for every single question
+  - High-yield AZ-104 exam traps and distractor warnings for storage security, failover, and access tiering
+  - High-yield 1-year quick revision cheat sheet summarizing critical cloud storage concepts from Days 9 to 15
+- **[Day 15: Azure File Shares and AzCopy: Enterprise SMB/NFS File Storage, Snapshots, Soft Delete, and High-Performance CLI Data Transfer Master Guide](./day-15-azure-file-shares-and-azcopy/blog-article.md)**
+  - Enterprise SMB 3.0/3.1.1 and NFS 4.1 file share architectures and protocol constraints
+  - The "Port 445 Problem" across consumer ISPs and modern resolutions (P2S/S2S VPN, ExpressRoute, SMB over QUIC)
+  - Hands-on deployment of standard file share (`salesdeptdocuments`) in `azurestudystorage01` with 100 TiB quota
+  - Automated Windows PowerShell mounting script: SMB connectivity testing, credential persistence (`cmdkey`), and drive mapping (`Z:`)
+  - Local directory structuring (`Sales2026`) and bidirectional file synchronization verification
+  - Disaster recovery via point-in-time File Share Snapshots (`quarterlysnapshot`) and granular file restoration
+  - Hardening storage accounts against accidental deletion via File Share Soft Delete (configured to 20 days)
+  - Hybrid file integration overview with Azure File Sync (Storage Sync Services, Sync Groups, and Cloud Tiering)
+  - AzCopy v10 CLI deep dive: Go-based parallel asynchronous streaming, OAuth vs SAS authentication, copy vs sync operations, and direct cross-cloud migrations from AWS S3
 - **[Day 14: Azure Storage Access Tiers and Lifecycle Management: Automated Tiering, Cost Optimization, and Rehydration Master Guide](./day-14-azure-storage-access-tiers-and-lifecycle-management/blog-article.md)**
   - In-depth architectural analysis of the four Blob access tiers: Hot, Cool, Cold (online), and Archive (offline)
   - Account-level default tiers vs blob-level explicit and inferred access tier mechanics
